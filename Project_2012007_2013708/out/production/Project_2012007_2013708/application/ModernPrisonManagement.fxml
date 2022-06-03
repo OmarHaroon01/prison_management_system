@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#handleEnterButton" prefHeight="703.0" prefWidth="872.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ModernPrisonManagementController">
+   <children>
+      <JFXToolbar onMouseDragged="#handleMouseDrag" onMousePressed="#handleMouseClick" prefHeight="30.0" prefWidth="872.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <right>
+            <HBox prefHeight="70.0" prefWidth="90.0" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="minimizeButton" mnemonicParsing="false" onAction="#handleMinimizeButton" prefHeight="13.0" prefWidth="25.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-radius: 50px;" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_MINIMIZE" size="15" />
+                     </graphic>
+                  </Button>
+                  <Button disable="true" mnemonicParsing="false" prefHeight="13.0" prefWidth="25.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-radius: 50px;" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="WINDOW_MAXIMIZE" size="15" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="13.0" prefWidth="25.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-radius: 50px;" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" size="15" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets right="5.0" top="2.0" />
+               </padding>
+            </HBox>
+         </right>
+         <left>
+            <HBox prefHeight="32.0" prefWidth="286.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/Logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label prefHeight="17.0" prefWidth="245.0" text="Modern Prison Management of Alcatraz" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets left="3.0" top="9.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </left>
+      </JFXToolbar>
+      <HBox prefHeight="672.0" prefWidth="290.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="582.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="293.0" style="-fx-background-color: #0015ff;">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="69.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="69.0" AnchorPane.topAnchor="30.0" />
+                  <Label blendMode="LIGHTEN" layoutX="29.0" layoutY="208.0" text="Are you an Admin?" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label blendMode="LIGHTEN" layoutX="67.0" layoutY="261.0" text="Please Login" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <JFXPasswordField fx:id="passwordField" layoutX="55.0" layoutY="370.0" promptText="Password" style="-fx-background-color: white;">
+                     <font>
+                        <Font name="Arial Italic" size="16.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <Label fx:id="incorrectPasswordLabel" layoutX="68.0" layoutY="410.0" text="*Incorrect Password" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="632.0" text="© Since 1934. Alcatraz Prison. All Right Reserved." textAlignment="CENTER" textFill="WHITE" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="30.0" layoutY="395.0" size="25" text="" wrappingWidth="11.714285850524902" />
+                  <JFXButton fx:id="loginButton" layoutX="92.0" layoutY="451.0" onAction="#loginButtonClick" onMouseEntered="#handleLoginButtonMouseEntered" onMouseExited="#handleLoginButtonMouseExited" style="-fx-border-color: white; -fx-border-radius: 15px;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="KEY" size="18" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="283.0" prefHeight="673.0" prefWidth="589.0" style="-fx-background-color: #d7daf7;" AnchorPane.topAnchor="30.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="135.0" layoutX="236.0" layoutY="277.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../resources/most-wanted2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="128.0" layoutX="70.0" layoutY="461.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../resources/prisoner-7.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="135.0" layoutX="406.0" layoutY="461.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../resources/most-wanted.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="135.0" layoutX="406.0" layoutY="114.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../resources/most-wanted3.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="135.0" layoutX="70.0" layoutY="114.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../resources/prisoner-3.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="176.0" layoutY="49.0" text="MOST WANTED">
+               <font>
+                  <Font name="Arial Bold" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="254.0" layoutY="435.0" text="Dilan Thomas">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="79.0" layoutY="273.0" text="Michael Smith">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="415.0" layoutY="273.0" text="James Johnson">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="436.0" layoutY="619.0" text="Steve Paul">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="88.0" layoutY="619.0" text="Robert Born">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
